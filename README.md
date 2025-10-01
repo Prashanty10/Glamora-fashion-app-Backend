@@ -29,21 +29,28 @@ This is the backend for the Glamora fashion app. It is built using **Node.js**, 
 
 Backend/
 │
-├── Models/ # Mongoose schemas
-│ └── user.models.js # User model (name, email, password, etc.)
+├── config/                  # Configuration files
+│   └── db.js                # MongoDB connection setup
 │
-├── Routes/ # API routes
-│ ├── auth.routes.js # Routes for login and registration
-│ └── other.routes.js # Additional routes if any
+├── controllers/             # Controllers contain request logic
+│   └── auth.controller.js   # Functions for register/login
 │
-├── Controllers/ # Optional: logic for handling requests
-│ └── auth.controller.js # Functions for login/register
+├── middleware/              # Middleware for authentication & validation
+│   └── auth.middleware.js
 │
-├── Middleware/ # Optional: auth middleware, validation
-│ └── auth.middleware.js
+├── models/                  # Mongoose schemas
+│   └── user.model.js
 │
-├── server.js # Main server file (Express app setup)
-├── package.json # Project dependencies and scripts
-├── package-lock.json # Dependency lock file
-└── .env # Environment variables (MongoDB URI, JWT secret
+├── routes/                  # API routes
+│   └── auth.routes.js       # Routes for login/register
+│
+├── utils/                   # Utility functions
+│   └── generateToken.js     # JWT token generation
+│
+├── .env                     # Environment variables (Mongo URI, JWT secret, PORT)
+├── .gitignore               # Files/folders to ignore (node_modules, logs, etc.)
+├── package.json             # Project dependencies and scripts
+├── package-lock.json        # Dependency lock file
+└── server.js                # Entry point: initializes Express app and server
+
 
